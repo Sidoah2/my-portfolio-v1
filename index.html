@@ -1,164 +1,345 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Dennis Ivy</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/theme-switcher.css">
-    </head>
-    <body>
-        <div id="container--main">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ahmed Bouacheri</title>
+    <meta name="description" content="Ahmed Bouacheri - Mobile Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/theme-switcher.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .section--page {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        #profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 20px;
+        }
+        #bio, #email {
+            margin: 5px 0;
+        }
+        #socials--list a {
+            margin-right: 15px;
+            color: #FFC107;
+            text-decoration: none;
+        }
+        #wrapper--techstack__items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .card--techstack {
+            background-color: #1E1E1E;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-            <section id="wrapper--hero" class="section--page">
-                <img id="profile-pic" src="./assets/images/profile_pic.png">
+        /* TIMELINE */
+        .timeline-item {
+            display: flex;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            background-color: #FFC107;
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+            top: 5px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: rgba(255, 193, 7, 0.6);
+            top: 14px;
+            bottom: -26px;
+            left: 6px;
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        .timeline-content {
+            margin-left: 20px;
+        }
+        .timeline-date {
+            color: #FFC107;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container--main">
 
-                <div>
-                    <h1 id="user-name">Dennis Ivy</h1>
-                    <p id="bio">Software developer, developer advocate at <a href="https://www.appwrite.io/" target="_blank">Appwrite</a>, Udemy <a href="https://www.udemy.com/user/dennis-ivanov-5/" target="_blank">instructor</a>, <a href="https://www.youtube.com/c/dennisivy" target="_blank">YouTuber</a> and contributor at <a href="https://youtu.be/PtQiiknWUcI?t=6" target="_blank">Traversy Media</a>.</p>
-                    <p id="email">👉 dennis@dennisivy.com</p>
-                </div>  
-            </section>
+        <!-- HERO SECTION -->
+        <section id="wrapper--hero" class="section--page">
+            <img id="profile-pic" src="./assets/images/profil.png" alt="Ahmed Bouacheri">
 
-            <section class="section--page">
+            <div>
+                <h1 id="user-name">Ahmed Bouacheri</h1>
+<p id="bio">
+Mobile developer specialized in Flutter and Express.js, with experience in MongoDB, MySQL, and SQLite. I create intuitive, efficient, and user-focused mobile and web applications, integrating custom UI/UX designs, backend APIs, and even AI/ML features when needed.
+</p>
+                <p id="email">👉 a.bouacheri@esi-sba.dz</p>
+            </div>  
+        </section>
+
+        <!-- SOCIAL LINKS -->
+        <section class="section--page">
+            <div id="socials--list">
+                <a href="https://www.linkedin.com/in/ahmed-bouacheri-09819329b" target="_blank">LinkedIn</a>
+                <a href="https://www.facebook.com/share/19fxVoB5De/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/.s.i.d.o.u.?igsh=MW1weGtmbHhiazdxZA==" target="_blank">Instagram</a>
+                <a href="https://github.com/Sidoah2/" target="_blank">GitHub</a>
+                <a href="./assets/resume.pdf" target="_blank">Download Resume</a>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section--page">
+            <h2>Skills & Qualifications</h2>
+            <ul id="qualifications--list">
+                <li>✔️ Mobile development with Flutter</li>
+                <li>✔️ Database management: MongoDB, MySQL, SQLite</li>
+                <li>✔️ UI/UX design and state management (Provider, Bloc, Cubit)</li>
+                <li>✔️ Integration of ML models into Flutter applications</li>
+            </ul>
+        </section>
+
+        <!-- TECH STACK -->
+        <section class="section--page">
+            <h2>Tech Stack</h2>
+            <div id="wrapper--techstack__items">
+                <div class="card--techstack"><span>Flutter, Dart</span></div>
+                <div class="card--techstack"><span>Express.js, Node.js</span></div>
+                <div class="card--techstack"><span>MongoDB, MySQL, SQLite, Firebase</span></div>
+                <div class="card--techstack"><span>HTML, CSS, JavaScript</span></div>
+            </div>
+        </section>
+
+        <!-- WORK HISTORY -->
+        <section id="work-history-wrapper" class="section--page">
+            <h2>Work History</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <strong>🚧 Freelance Mobile Developer</strong>
+                    <p class="timeline-date">2023 – Present</p>
+                    <p>Developed mobile and web applications for various clients:</p>
+                    <ul>
+                        <li>Stock management systems</li>
+                        <li>Online sales & e-commerce platforms</li>
+                        <li>Custom UI/UX and application design</li>
+                        <li>Integrated backend APIs and databases</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <strong>🚧 Internship | EPH – Hôpital Meslem Tayeb</strong>
+                    <p class="timeline-date">September 1 – 21, 2025</p>
+                    <p>Observed hospital organization and information systems for medical record management. Gained experience in interdepartmental processes and professional ethics.</p>
+                </div>
+            </div>
+
+               <div class="timeline-item">
         
-                <div id="socials--list">
-                    <a href="https://youtube.com/c/dennisivy" target="_blank">Youtube</a>
-                    <a href="https://twitter.com/dennisivy11" target="_blank">Twitter</a>
-                    <a href="https://www.linkedin.com/in/dennis-ivanov/" target="_blank">Linkedin</a>
-                    <a href="https://github.com/divanov11" target="_blank">Github</a>
-                    <a href="./assets/resume.pdf" target="_blank">Download Resume</a>
+                <div class="timeline-content">
+                   
+                  
                 </div>
-            </section>
+        </section>
 
-            <section class="section--page">
-                <h2>Skills & Qualifications</h2>
-                <ul id="qualifications--list">
-                    <li>✔️ 10 Years experience in fullstack development</li>
-                    <li>✔️ Tech educator & online instructor (Youtube & Udemy)</li>
-                    <li>✔️ Techincal writing & Blogging</li>
-                    <li>✔️ SEO & paid ad campaigns (Google Adwords)</li>
-                </ul>
-            </section>
+        <!-- EDUCATION -->
+        <section id="education-wrapper" class="section--page">
+            <h2>Education</h2>
 
-            <section class="section--page">
-                <h2>Tech stack</h2>
-
-                <div id="wrapper--techstack__items">
-                    <div class="card--techstack"><span>Python, JavaScript, NodeJS</span></div>
-                    <div class="card--techstack"><span>Django, Express, Flask, FastAPI</span></div>
-                    <div class="card--techstack"><span>React, Next JS</span></div>
-                    <div class="card--techstack"><span>Postgres, MongoDB, MySQL</span></div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <strong>Udemy</strong>
+                    <p class="timeline-date">2024</p>
+                    <p>Machine Learning & Deep Learning in Flutter App</p>
                 </div>
-            </section>
+            </div>
 
-            <section id="work-history-wrapper" class="section--page">
-                <h2>Work History</h2>
-
-                <div class="card--work-history">
-                    <strong>🚧 DEVELOPER ADVOCATE | APPWRITE.IO</strong>
-                    <p>9/2023 - present</p>
-                    <p><strong>[Current Challenge]</strong> Working to improve developer adoption and experience across all Appwrites SDKs through educational content on the Appwrite <a href="https://www.youtube.com/appwrite" target="_blank">Youtube channel</a>, <a href="https://appwrite.io/blog/author/dennis-ivy" target="_blank">articles</a>, & <a href="https://www.youtube.com/live/VJvawxeUhN4">community events</a></p>
-                    <strong>[Progress since 9/2023]</strong>
-                    <ul>
-                        <li>Videos +39 | Views +136.6k</li>
-                        <li>Live streams: 5</li>
-                        <li>Articles: 9</li>
-                        <li>Events attended: 4</li>
-                    </ul>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <strong>Higher School of Computer Science (ESI-SBA)</strong>
+                    <p class="timeline-date">2027 (expected)</p>
+                    <p>2nd year of higher education completed (Grade: Good)</p>
                 </div>
+            </div>
 
-                <div class="line-break"></div>
-
-                <div class="card--work-history">
-                    <strong>🚧 DEVELOPER ADVOCATE | AGORA.IO</strong>
-                    <p>11/2021 - 9/2023</p>
-                    <p>Worked on making Agora’s Web-Based SDK more accessible through video tutorials, articles, demo projects, and event-based training. Also building out React UI components & leading a team to re-design Agora’s documentation and API reference.</p>
-                    <ul>
-                        <li>Doubled Web SDK’s monthly usage minutes from 15 million to 30 million minutes within my first 4 months</li>
-                        <li>Produced educational video content which resulted in 300k+ views on youtube</li>
-                        <li>Produced SEO campaigns and content to gain market share for related keywords.</li>
-                    </ul>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <strong>Artificial Intelligence & Data Science</strong>
+                    <p class="timeline-date">2025 – 2027 (ongoing)</p>
+                    <p>Specialization in AI & Data Science</p>
                 </div>
+            </div>
 
-                <div class="line-break"></div>
 
-                <div class="card--work-history">
-                    <strong>🚧 INSTRUCTOR | YOUTUBE, UDEMY, TEACHABLE</strong>
-                    <p>11/2019 - Present</p>
-                    <p>Produced content showcasing new tech, tutorials & interviews with top developers.</p>
-                    <ul>
-                        <li>210k+ Youtube Subscribers</li>
-                        <li>30,000 course copies sold</li>
-                        <li>12+ Million views on Youtube</li>
-                        <li>Made regular contributions to Traversy Medias YouTube channel (1.9m Subscribers)</li>
-                        <li>Tutorial videos included projects such as social networks, E-commerce, real-time video, stripe & PayPal integrations, and more </li>
-                    </ul>
+               <div class="timeline-item">
+        
+                <div class="timeline-content">
+                   
+                  
                 </div>
+            </div>
+        </section>
 
-                <div class="line-break"></div>
+        <!-- PROJECTS -->
+   
+<section id="projects-wrapper" class="section--page">
+    <h2>Projects</h2>
+    <p>These are some of the mobile applications I’ve developed as freelance projects, showcased here in my portfolio.</p>
 
-                <div class="card--work-history">
-                    <strong>🚧 SENIOR DEVELOPER | FOI LABS</strong>
-                    <p>10/2017 - 10/2019</p>
-                    <p>Designed and developed a laboratory management system. My system
-                        provided an interface for lab technicians and customers to view and
-                        track data from samples tested in the lab.</p>
-                    <ul>
-                        <li>Designed prototype & pitched original idea for new lab management system (LIMS)</li>
-                        <li>Built the entire code base and brought version 1.0 of the LIMS system to market as a solo developer</li>
-                        <li>Onboarded and trained customers (Webinars & Conferences)</li>
-                        <li>Managed a small team of developers in the expansion of the LIMS system</li>
-                    </ul>
-                </div>
 
-                <div class="line-break"></div>
+    <!-- Project 1 -->
+    <div class="project-card">
+        <span class="badge">Freelance Project</span>
+        <a href="tijarati.html" target="_blank"><h3>🏆 Tijarati 📱 - Sales & Invoice Management App</h3></a>
+        <p>A simple app that helps manage sales, invoices, and print receipts, bringing real value to a client’s daily operations.</p>
+        <p><strong>Tech Stack:</strong> Flutter, SQLite, Bluetooth printing</p>
+    </div>
 
-                <div class="card--work-history">
-                    <strong>🚧 DIGITAL MARKETER | UNIFIVE DIGITAL</strong>
-                    <p>2014 - 2017</p>
-                    <p>Started a digital agency building websites and marketing for
-                        local businesses.</p>
-                    <ul>
-                        <li>Organized SEO & SEM campaigns on a local and global scale.</li>
-                        <li>Saved a customer $110k a year by reducing Adwords CPC cost with optimization</li>
-                        <li>70 + websites built with my small team of developers and freelancers</li>
-                    </ul>
-                </div>
-            </section>
+    <!-- Project 2 -->
+    <div class="project-card">
+        <span class="badge">Freelance Project</span>
+        <a href="smartioy.html" target="_blank"><h3>🏆 Smart IoT-Based Energy Meter</h3></a>
+        <p>Optimizes energy consumption and provides real-time monitoring for users and energy providers.</p>
+        <ul>
+            <li>Real-time measurement of voltage, current, power (W), and energy consumption (kWh)</li>
+            <li>Automatic cost calculation based on residential tariff tiers</li>
+            <li>Smart alerts for consumption peaks</li>
+            <li>Multi-profile interface: User, Technician, Administrator</li>
+            <li>Wi-Fi connectivity for remote monitoring via a Flutter mobile app</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Arduino UNO, ESP32, Flutter, Firebase</p>
+    </div>
 
-            <section class="section--page">
-                <h2>Projects & Accomplishments</h2>
+    <!-- Project 3 -->
+    <div class="project-card">
+        <span class="badge">Freelance Project</span>
+        <a href="stockmanagment.html" target="_blank"><h3>🏆 Stock Management System – Smart Inventory & Sales Management</h3></a>
+        <p>Three-app system for business owners, sellers, and clients: manage stock, sales, invoices, orders, and financial tracking.</p>
+        <p><strong>Tech Stack:</strong> Flutter, Firebase</p>
+    </div>
 
-                <div class="card--project">
-                    <a href="project1.html"><span>🏆 </span>Built a Laboratory management system for forensics lab</a>
-                </div>
+    <!-- Project 4 -->
+    <div class="project-card">
+        <span class="badge">Freelance Project</span>
+        <a href="transfer.html" target="_blank"><h3>🏆 Transfer – Multi-Service Transportation App</h3></a>
+        <p>An app initially connecting users with taxi drivers, expanded to include trucks, construction vehicles, and equipment rentals based on client needs.</p>
+        <p><strong>Key Features:</strong> Multi-category vehicle & equipment booking, flexible pricing, advanced filtering, user-friendly dashboard.</p>
+        <p><strong>Tech Stack:</strong> Flutter, Firebase, REST APIs</p>
+    </div>
 
-                <div class="card--project">
-                    <a href="project1.html" ><span>🏆 </span>Documentation website - Lead team to re-build docs for agora.io</a>
-                </div>
+    <!-- Project 5 -->
+    <div class="project-card">
+        <span class="badge">Freelance Project</span>
+        <a href="fidk.html" target="_blank"><h3>🏆 Freelance Buyer & Seller App</h3></a>
+        <p>A mobile app connecting sellers and buyers with tailored interfaces, secure login, built-in chat, ratings, and payment systems (Chargili & Baridi).</p>
+        <p><strong>Tech Stack:</strong> Flutter, Firebase, REST APIs</p>
+    </div>
 
-                <div class="card--project">
-                    <a href="project1.html" ><span>🏆 </span>Ecommerce platform using paypal and stripe API for payment integration</a>
-                </div>
+    <!-- Project 6 -->
+    <div class="project-card">
+        <span class="badge">Freelance Project</span>
+        <a href="gdstock.html" target="_blank"><h3>🏆 GDStock - Distributor & Customer App</h3></a>
+        <p>A mobile app that streamlines interactions between distributors and customers, allowing product management, order creation, and secure account access.</p>
+        <ul>
+            <li>📦 Distributor Interface: Add available products, manage orders.</li>
+            <li>🛒 Customer Interface: View products, create purchase orders, select storage for purchasing.</li>
+            <li>🔒 Account Security: Only customers with special accounts created by the distributor can access the app.</li>
+            <li>🖨️ Order Printing: Orders can be printed directly from the app.</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Flutter, Express.js, MySQL / MongoDB</p>
+    </div>
+</section>
 
-                <div class="card--project">
-                    <a href="project1.html"><span>🏆 </span>Social Network - open source project</a>
-                </div>
+<style>
+    #projects-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
 
-            </section>
+    .project-card {
+        background-color: #1e1e1e;
+        color: #fff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        position: relative;
+    }
 
-       
-        </div>
-        <div id="theme-switcher">
-            <div class="theme" id="theme-light" data-theme="light"></div>
-            <div class="theme" id="theme-dark" data-theme="dark"></div>
-        </div>
-    </body>
-    <script src="js/theme-switcher.js"></script>
+    .project-card a h3 {
+        color: #FFC107;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-card ul {
+        list-style: disc inside;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    
+        color: #6c6c6c;
+        padding: 0.25rem 0.75rem;
+        border-radius: 5px;
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+</style>
+
+
+    <!-- THEME SWITCHER
+     <div id="theme-switcher">
+        <div class="theme" id="theme-light" data-theme="light"></div>
+        <div class="theme" id="theme-dark" data-theme="dark"></div>
+    </div>
+    <script src="js/theme-switcher.js"></script> -->
+
+
+
+    <footer style="text-align:center; padding:20px; background-color:#1E1E1E; color:#FFC107; margin-top:40px;">
+    &copy; 2025 Ahmed Bouacheri. All Rights Reserved.
+</footer>
+</body>
 </html>
-
-

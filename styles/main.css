@@ -178,3 +178,86 @@ li{
         padding-left: 0;
     }
 }
+
+
+/* Timeline container */
+#work-history-wrapper {
+    position: relative;
+    padding-left: 40px;
+}
+
+/* Each timeline item */
+.timeline-item {
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Dot */
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #FFC107; /* amber accent color */
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    top: 5px;
+}
+
+/* Vertical line connecting dots */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 193, 7, 0.6); /* semi-transparent amber */
+    top: 14px; /* start below the dot */
+    bottom: -26px; /* extend to next dot */
+    left: 6px; /* align with dot center */
+}
+
+/* Remove line for last item */
+.timeline-item:last-child::before {
+    display: none;
+}
+
+/* Content */
+.timeline-content {
+    margin-left: 20px;
+}
+
+/* Date style */
+.timeline-date {
+    color: #FFC107;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+
+/* Timeline container common for all sections */
+.timeline-item {
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Dot */
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #FFC107; /* amber */
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    top: 5px;
+}
+
+/* Vertical line connecting dots */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 193, 7, 0.6); /* semi-transparent amber */
+    top: 14px; /* start below the dot */
+    bottom: -26px; /* extend to next dot */
+    left: 6px; /* align with dot center */
+}

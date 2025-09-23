@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Smart IoT Energy Meter</title>
+    <meta name="description" content="Smart IoT-Based Energy Meter for real-time monitoring and energy optimization">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/theme-switcher.css">
+    <style>
+        /* Carousel container */
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 1em auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Slides */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* Dots */
+        .carousel-dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .carousel-dots span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .carousel-dots .active {
+            background-color: #FFC107;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div id="container--main">
+        <a href="index.html">&#x2190; Go Back</a>
+        <h1>Smart IoT-Based Energy Meter ⚡</h1>
+
+        <!-- Carousel -->
+        <div class="carousel">
+            <div class="slides">
+                <!-- <img src="./assets/images/iot1.webp" alt="IoT Energy Meter Screenshot 1">
+                <img src="./assets/images/iot2.webp" alt="IoT Energy Meter Screenshot 2">
+                <img src="./assets/images/iot3.webp" alt="IoT Energy Meter Screenshot 3"> -->
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="carousel-dots">
+            <!-- <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span> -->
+        </div>
+
+        <p>💬 No matter the field or the topic: If there’s a real project to build, code to write, or an application to develop, you’ll find me there! 🚀</p>
+
+        <p>🔌 <strong>Project:</strong> Smart IoT-Based Energy Meter</p>
+
+        <p>🎯 <strong>Objective:</strong> Optimize energy consumption management and provide real-time monitoring for both users and energy providers.</p>
+
+        <p>⚡ <strong>Key Features:</strong></p>
+        <ul>
+            <li>✅ Real-time measurement of voltage, current, power (W), and energy consumption (kWh)</li>
+            <li>✅ Automatic cost calculation based on residential tariff tiers (2025)</li>
+            <li>✅ Smart alerts to notify users of consumption peaks</li>
+            <li>✅ Multi-profile interface: User, Technician, and Administrator (Provider)</li>
+            <li>✅ Wi-Fi connectivity for remote monitoring via a Flutter mobile app</li>
+        </ul>
+
+        <p>🛠️ <strong>Tech Stack:</strong></p>
+        <ul>
+            <li><strong>Arduino UNO:</strong> Measures voltage and current, calculates power and energy, sends serial data to ESP32</li>
+            <li><strong>ESP32:</strong> Connects to Wi-Fi, sends data to Firebase in real-time</li>
+            <li><strong>Flutter Mobile App:</strong> Reads and displays real-time data from Firebase, provides interactive visualization</li>
+            <li><strong>Firebase:</strong> Real-time database for synchronization and multi-profile management</li>
+        </ul>
+
+        <p>💡 <strong>Outcome:</strong> A smart IoT system that makes energy consumption transparent, optimized, and interactive, with real-time insights to improve energy management and communication between provider and consumer.</p>
+
+        <p>#IoT #Flutter #Arduino #ESP32 #Firebase #SmartEnergy #EnergyManagement #RealTimeMonitoring</p>
+
+        <ul>
+            <li><a href="#">Live Demo</a></li>
+            <li><a href="#">Source Code</a></li>
+        </ul>
+    </div>
+
+    <!-- Theme switcher -->
+    <div id="theme-switcher">
+        <div class="theme" id="theme-light" data-theme="light"></div>
+        <div class="theme" id="theme-dark" data-theme="dark"></div>
+    </div>
+
+    <script src="js/theme-switcher.js"></script>
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        const dots = document.querySelectorAll('.dot');
+
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            if(index < 0) index = images.length - 1;
+            if(index >= images.length) index = 0;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        prev.addEventListener('click', () => showSlide(currentIndex - 1));
+        next.addEventListener('click', () => showSlide(currentIndex + 1));
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => showSlide(idx));
+        });
+
+        setInterval(() => showSlide(currentIndex + 1), 5000);
+    </script>
+</body>
+</html>

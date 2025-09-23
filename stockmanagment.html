@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stock Management System</title>
+    <meta name="description" content="Smart Inventory & Sales Management System for business owners, sellers, and clients">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/theme-switcher.css">
+    <style>
+        /* Carousel container */
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 1em auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Slides */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* Dots */
+        .carousel-dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .carousel-dots span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .carousel-dots .active {
+            background-color: #FFC107;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div id="container--main">
+        <a href="index.html">&#x2190; Go Back</a>
+        <h1>Stock Management System – Smart Inventory & Sales Management 🚀</h1>
+
+        <!-- Carousel -->
+        <div class="carousel">
+            <div class="slides">
+                <!-- <img src="./assets/images/stock1.webp" alt="Stock Management Screenshot 1">
+                <img src="./assets/images/stock2.webp" alt="Stock Management Screenshot 2">
+                <img src="./assets/images/stock3.webp" alt="Stock Management Screenshot 3"> -->
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="carousel-dots">
+            <!-- <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span> -->
+        </div>
+
+        <p>This project was developed under the guidance of an expert with 10+ years of experience, ensuring it meets real business needs. The system consists of three applications designed for business owners, sellers, and clients, each with tailored functionalities to optimize stock management, sales tracking, and financial operations.</p>
+
+        <p>⚡ <strong>Key Features:</strong></p>
+        <ul>
+            <li>✅ Sales & Invoice Management – Create, print, and track invoices</li>
+            <li>✅ Inventory Control – Real-time stock tracking with min/max alerts</li>
+            <li>✅ Supplier & Client Management – Track transactions and payments</li>
+            <li>✅ Advanced Search & Reports – Quick access to invoices, sales, and expenses</li>
+            <li>✅ Order Management – Clients can place & track orders</li>
+            <li>✅ Expense & Payment Tracking – Manage financials efficiently</li>
+            <li>✅ Suggested Products & Comments – Interactive collaboration between users</li>
+        </ul>
+
+        <p>🛠️ <strong>Tech Stack & Timeline:</strong></p>
+        <ul>
+            <li>Flutter & Firebase for a smooth and responsive experience</li>
+            <li>Development Duration: 3 months (2 months coding + 1 month testing & optimization)</li>
+        </ul>
+
+        <ul>
+            <li><a href="#">Live Demo</a></li>
+            <li><a href="#">Source Code</a></li>
+        </ul>
+    </div>
+
+    <!-- Theme switcher -->
+    <div id="theme-switcher">
+        <div class="theme" id="theme-light" data-theme="light"></div>
+        <div class="theme" id="theme-dark" data-theme="dark"></div>
+    </div>
+
+    <script src="js/theme-switcher.js"></script>
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        const dots = document.querySelectorAll('.dot');
+
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            if(index < 0) index = images.length - 1;
+            if(index >= images.length) index = 0;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        prev.addEventListener('click', () => showSlide(currentIndex - 1));
+        next.addEventListener('click', () => showSlide(currentIndex + 1));
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => showSlide(idx));
+        });
+
+        setInterval(() => showSlide(currentIndex + 1), 5000);
+    </script>
+</body>
+</html>
